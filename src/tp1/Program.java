@@ -8,7 +8,7 @@ public class Program {
 	private static float[] notaAv1;
 	private static float[] notaAv2;
 
-	private static final int QTDE = 3;
+	private static final int QTDE = 5;
 	private static final Integer[] OPCOES = { 1, 2, 3, 4 };
 
 	private static float calcularMedia(int id) {
@@ -23,10 +23,7 @@ public class Program {
 		if (calcularMedia >= 7) {
 			System.out.println("Aprovado");
 		} else if (calcularMedia >= 4 && calcularMedia < 7) {
-			System.out.println("Prova Final");
 			return "Prova Final";
-		} else {
-			System.out.println("Reprovado");
 		}
 		return "Reprovado";
 	}

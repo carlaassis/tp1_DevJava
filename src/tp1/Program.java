@@ -13,7 +13,11 @@ public class Program {
 	
 
 	private static float calcularMedia(int id){
-		return notaAv1[id] + notaAv2[id] / 2;
+		float nota1Aux = notaAv1[id];
+		float nota2Aux = notaAv2[id];
+		float somatorio = nota1Aux + nota2Aux;
+		float media = somatorio / 2;
+		return media;
 	}
 	
 	private static String obterSituacao (float calcularMedia){
@@ -22,10 +26,11 @@ public class Program {
 		}
 			else if(calcularMedia >=4 && calcularMedia == 6) {
 				System.out.println("Prova Final");
+				return "Prova Final";
 			}
 		else {
 			System.out.println("Reprovado");}
-		return null;
+			return "Reprovado";
 		}
 
 			
@@ -36,7 +41,7 @@ public class Program {
 		
 		String situacao = obterSituacao(mediaFinal);
 		
-		System.out.printf("{%d} %s - %f - %f :: Média Final = %f (%s)\n", 
+		System.out.printf("{%d}\n Nome do aluno: %s\n Nota da AV1: %f\n Nota da AV2: %f\n Media Final = %f\n Situação: (%s)\n", 
 				id, 
 				nomes[id], notaAv1[id], notaAv2[id], mediaFinal, situacao);
 	}
@@ -49,15 +54,6 @@ public class Program {
 		}
 	}
 		
-	private static float calcularNotasTurma(int qtde) {
-		float somaNotas = 0;
-		for(int x = 0; x < qtde; x++) {
-			somaNotas = somaNotas + calcularMedia(x);
-		}		
-		
-		return somaNotas;
-	}
-
 	public static void main(String[] args) {
 
 		nomes = new String[QTDE];
@@ -74,7 +70,7 @@ public class Program {
 			System.out.println("[2] Consultar boletim de um aluno.");
 			System.out.println("[3] Consultar notas da turma.");
 			System.out.println("[4] Sair");
-			System.out.print("Informe a opção desejada: ");
+			System.out.print("Informe a opcao desejada: ");
 			opcao = in.nextInt();
 			
 			if(Arrays.asList(OPCOES).contains(opcao)) {
@@ -91,9 +87,9 @@ public class Program {
 						System.out.println("Informe a nota da AV2:");
 						notaAv2[i] = in.nextFloat();
 						
-						System.out.println("... Inclusão realizada ...");
+						System.out.println("x.x.x Inclusão realizada com sucesso x.x.x");
 						imprimir(i);
-						System.out.println("...... com sucesso! ......");
+						
 						
 						i++;
 					}else {
@@ -127,8 +123,7 @@ public class Program {
 		
 		System.out.println("Cadastramento finalizado com sucesso!!!");		
 		System.out.println("Quantidade de Alunos: " + i);
-		System.out.println("Média Final: " + calcularNotasTurma(i));
-		System.out.println("Situação: " + obterSituacao(i));
+		
 		
 		in.close();
 	}

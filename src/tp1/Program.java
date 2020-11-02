@@ -8,7 +8,7 @@ public class Program {
 	private static float[] notaAv1;
 	private static float[] notaAv2;
 
-	private static final int QTDE = 2;
+	private static final int QTDE = 100;
 	private static final Integer[] OPCOES = { 1, 2, 3, 4 };
 
 	private static float calcularMedia(int id) {

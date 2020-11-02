@@ -8,7 +8,7 @@ public class Program {
 	private static float[] notaAv1;
 	private static float[] notaAv2;
 
-	private static final int QTDE = 5;
+	private static final int QTDE = 2;
 	private static final Integer[] OPCOES = { 1, 2, 3, 4 };
 
 	private static float calcularMedia(int id) {
@@ -21,7 +21,7 @@ public class Program {
 
 	private static String obterSituacao(float calcularMedia) {
 		if (calcularMedia >= 7) {
-			System.out.println("Aprovado");
+			return "Aprovado";
 		} else if (calcularMedia >= 4 && calcularMedia < 7) {
 			return "Prova Final";
 		}
@@ -35,7 +35,7 @@ public class Program {
 		String situacao = obterSituacao(mediaFinal);
 
 		System.out.printf(
-				"{%d}\n Nome do aluno: %s\n Nota da AV1: %f\n Nota da AV2: %f\n Media Final = %f\n Situação: (%s)\n",
+				"{%d}\n Nome do aluno: %s\n Nota da AV1: %.1f\n Nota da AV2: %.1f\n Media Final = %.1f\n Situação: (%s)\n",
 				id, nomes[id], notaAv1[id], notaAv2[id], mediaFinal, situacao);
 	}
 
@@ -93,7 +93,7 @@ public class Program {
 					int id = in.nextInt();
 
 					if (id >= 0 && id < i) {
-						System.out.println("... Aluno: ...");
+						System.out.println("x.x.x Aluno: x.x.x");
 						imprimir(id);
 						System.out.println(".............................");
 					} else {
@@ -102,7 +102,7 @@ public class Program {
 					break;
 
 				case 3:
-					System.out.println("... Lista de alunos ...");
+					System.out.println("x.x.x Lista de alunos x.x.x");
 					imprimir();
 					System.out.println(".............................");
 					break;
@@ -112,7 +112,7 @@ public class Program {
 			}
 		} while (opcao != 4);
 
-		System.out.println("Cadastramento finalizado com sucesso!!!");
+		System.out.println("Cadastramento finalizado com sucesso!");
 		System.out.println("Quantidade de Alunos: " + i);
 
 		in.close();
